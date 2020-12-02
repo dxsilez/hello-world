@@ -66,3 +66,48 @@ for i in range(1,len(list5)):
         prev_elem = list5[i]
         i_printed = False
 
+#генерирум матрицу 5*5 из нулей
+n = 5
+a = [[0 for j in range(n)] for i in range(n)]
+
+#когда сумма введённых чисел будет равна нулю вывести сумму квадратов всех введенных чисел
+inpLine = []
+i = 0
+summa = 0
+while True:
+    inpLine.append(int(input()))
+    summa += inpLine[i]
+    if summa == 0:
+        for elem in inpLine:
+            summa += elem*elem
+        print(summa)
+        break
+    else:
+        i += 1
+
+#вывод N символов последовательности 1 2 2 3 3 3 4 4 4 4 5 5 5 5 5 и тд
+N = int(input())
+list6 = [1]
+for i in range(2, N):
+    for _j in range(i): # подчеркивание при _j - т.к. j дальше нигде не используется
+        list6.append(i)
+    if len(list6) > N:
+        break
+print(*list6[0:N]) # Звездочка - вывод элементов списка через пробел
+
+
+#поиск числа в списке и вывод его позиций
+list7 = [int(j) for j in input().split()]
+x = int(input())
+flag = False
+i = 0
+for elem in list7:
+    if elem == x:
+        print(i, end=' ')
+        flag = True
+        i += 1
+    else:
+        i += 1
+        continue
+if not flag:
+    print('Отсутствует')
